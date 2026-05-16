@@ -1,38 +1,83 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 1. Center the whole app on your screen */
+body {
+  margin: 0;
+  background-color: #111827;
+  font-family: Arial, sans-serif;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+/* 2. FORCE VERTICAL FORMAT FOR EVERYTHING */
+/* This stops elements from going horizontally side-by-side */
+div {
+  display: flex !important;
+  flex-direction: column !important; 
+  align-items: center !important;
+  justify-content: center !important;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* 3. The Main Box Container Card */
+div:has(h1) {
+  background-color: #1f2937;
+  padding: 40px;
+  border-radius: 16px;
+  width: 280px; /* Slimmer layout box for vertical layout */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* 4. Stopwatch Title Layout */
+h1 {
+  color: #ffffff;
+  font-size: 28px;
+  margin: 0 0 5px 0;
+}
+
+/* 5. Subtitle Paragraph text */
+p {
+  color: #9ca3af;
+  font-size: 14px;
+  margin: 0 0 20px 0;
+}
+
+/* 6. Big Number Timer Display */
+span {
+  color: #38bdf8;
+  font-size: 70px;
+  font-weight: bold;
+  margin: 0 0 25px 0;
+}
+
+/* 7. Vertical Buttons Layout spacing */
+div:has(button) {
+  gap: 12px; /* Adds space between stacked buttons */
+}
+
+/* 8. Clean Full-Width Buttons */
+button {
+  width: 100%; /* Makes buttons fill the vertical card layout */
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgba(117, 88, 15, 0.862);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.1s ease;
+}
+
+/* Button Individual Colors */
+button:nth-child(1) { background-color: #10b981; } /* Start */
+button:nth-child(2) { background-color: #ef4444; } /* Stop */
+button:nth-child(3) { background-color: #4b5563; } /* Reset */
+
+button:hover {
+  opacity: 0.9;
 }
